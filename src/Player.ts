@@ -33,7 +33,7 @@ export default class Player extends CanvasItem {
    *sdfsdfsdfds
    * @param delta tfyifdt
    */
-  public Update(delta: number): void {
+  public update(delta: number): void {
     this.posX += this.direction * delta * 0.5;
 
     if( this.posX <= 0) {
@@ -47,10 +47,13 @@ export default class Player extends CanvasItem {
     this.direction = 0;
   }
 
-  /**]
-   * xsdytrsdyrtes65t4u
+
+  /**
+   * asdasdsadsad
+   * @param item uhasidyhasihd
+   * @returns asdasdasd
    */
-  public CollidesWithItem(item: CanvasItem): boolean {
+  public collidesWithItem(item: CanvasItem): boolean {
     return (
       item.getPosX() + item.getWidth() >= this.posX
       && item.getPosX() <= this.posX + this.image.width
