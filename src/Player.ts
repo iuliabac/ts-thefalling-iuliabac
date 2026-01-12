@@ -36,12 +36,12 @@ export default class Player extends CanvasItem {
   public update(delta: number): void {
     this.posX += this.direction * delta * 0.5;
 
-    if( this.posX <= 0) {
+    if (this.posX <= 0) {
       this.posX = 0;
     }
 
-    if(this.posX + this.image.width > this.maxX) {
-      this.posX = this.image.width = this.maxX;
+    if (this.posX + this.image.width > this.maxX) {
+      this.posX = this.image.width - this.maxX;
     }
 
     this.direction = 0;
