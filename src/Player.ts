@@ -2,16 +2,16 @@ import CanvasItem from './CanvasItem.js';
 import CanvasRenderer from './CanvasRenderer.js';
 
 export default class Player extends CanvasItem {
-  private maxX: number;
+  private maxY: number;
 
   private direction: number;
 
-  public constructor(maxX: number) {
+  public constructor(maxY: number) {
     super();
     this.image = CanvasRenderer.loadNewImage('./assets/player.png');
     this.posX = 50;
     this.posY = 100;
-    this.maxX = maxX;
+    this.maxY = maxY;
     this.direction = 0;
   }
 
@@ -34,14 +34,14 @@ export default class Player extends CanvasItem {
    * @param delta tfyifdt
    */
   public update(delta: number): void {
-    this.posX += this.direction * delta * 0.5;
+    this.posY += this.direction * delta ;
 
-    if (this.posX <= 0) {
-      this.posX = 0;
+    if (this.posY < 0) {
+      this.posY = 0;
     }
 
-    if (this.posX + this.image.width > this.maxX) {
-      this.posX = this.image.width - this.maxX;
+    if (this.posY + this.image.height > this.maxY) {
+      this.posY = this.image.height - this.maxY;
     }
 
     this.direction = 0;
