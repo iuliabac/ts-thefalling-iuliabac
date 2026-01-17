@@ -4,7 +4,8 @@ import CanvasRenderer from './CanvasRenderer.js';
 import KeyListener from './KeyListener.js';
 import Player from './Player.js';
 import LightItem from './LightItem.js';
-import Orb from './Orb.js'; // this should be correct despite the error 
+import Orb from './Orb.js'; // this should be correct despite the error
+import Monster from './Monster.js';
 
 export default class TheFalling extends Game {
   private canvas: HTMLCanvasElement;
@@ -62,6 +63,8 @@ export default class TheFalling extends Game {
       const random: number = Math.random();
       if (random > 0.3) {
         this.lightItems.push(new Orb(this.canvas.width, this.canvas.height));
+      } else {
+        this.lightItems.push(new Monster(this.canvas.width, this.canvas.height));
       }
 
       this.timeToNextItem = (Math.random() * 300) + 300;
