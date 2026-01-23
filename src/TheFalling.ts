@@ -4,7 +4,7 @@ import CanvasRenderer from './CanvasRenderer.js';
 import KeyListener from './KeyListener.js';
 import Player from './Player.js';
 import LightItem from './LightItem.js';
-import Orb from './Orb.js'; // this should be correct despite the error
+import Orb from './Orb.js';
 import Monster from './Monster.js';
 
 export default class TheFalling extends Game {
@@ -55,7 +55,7 @@ export default class TheFalling extends Game {
 
   private spawnNewItem(elapsed: number): void {
     this.timeToNextItem -= elapsed;
-    
+
     if (this.timeToNextItem < 0) {
       const random: number = Math.random();
 
