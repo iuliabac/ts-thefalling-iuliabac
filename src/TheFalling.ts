@@ -55,8 +55,10 @@ export default class TheFalling extends Game {
 
   private spawnNewItem(elapsed: number): void {
     this.timeToNextItem -= elapsed;
+    
     if (this.timeToNextItem < 0) {
       const random: number = Math.random();
+
       if (random > 0.3) {
         this.lightItems.push(new Orb(this.canvas.width, this.canvas.height));
       } else {
