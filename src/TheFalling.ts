@@ -84,6 +84,7 @@ export default class TheFalling extends Game {
     }
 
     this.timeToNextLightforceDrop -= delta;
+
     if (this.timeToNextLightforceDrop < 0) {
       this.lightforce -= 1;
       this.timeToNextLightforceDrop = 1000;
@@ -103,7 +104,7 @@ export default class TheFalling extends Game {
         this.lightItems.splice(i, 1);
       }
 
-      if (item.getPosY() > this.canvas.height) {
+      if (item.getPosY() + item.getHeight() < 0) {
         this.lightItems.splice(i, 1);
       }
     }
@@ -126,6 +127,7 @@ export default class TheFalling extends Game {
 
     CanvasRenderer.writeText(this.canvas, `LightForce: ${this.lightforce}`, 10, 30, 'left', 'Arial', 30, 'cyan');
     CanvasRenderer.writeText(this.canvas, `Monsters: ${this.monstersCaught}`, 10, 70, 'left', 'Arial', 30, 'cyan');
+
     if (this.gameOver()) {
       CanvasRenderer.writeText(this.canvas, 'GAME OVER', this.canvas.width / 2, this.canvas.height / 2, 'center', 'Arial', 50, 'cyan');
     }
