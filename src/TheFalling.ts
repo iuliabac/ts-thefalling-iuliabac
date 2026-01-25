@@ -4,6 +4,7 @@ import CanvasRenderer from './CanvasRenderer.js';
 
 import Player from './Player.js';
 import MouseListener from './MouseListener.js';
+import KeyListener from './KeyListener.js';
 
 export default class TheFalling extends Game {
   private canvas: HTMLCanvasElement;
@@ -45,6 +46,10 @@ export default class TheFalling extends Game {
    */
   public processInput(): void {
     this.player.move (this.mouseListener.getMousePosition().x);
+
+    if(this.mouseListener.buttonPressed(MouseListener.BUTTON_LEFT)) {
+      console.log('clock');
+    }
   }
 
   private spawnNewItem(elapsed: number): void {
