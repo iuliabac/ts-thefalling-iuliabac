@@ -11,7 +11,9 @@ export default class Player extends CanvasItem {
     this.image = CanvasRenderer.loadNewImage('./assets/player.png');
     this.posX = 50;
     this.posY = 100;
+
     this.maxX = maxX;
+    
     this.direction = 0;
   }
 
