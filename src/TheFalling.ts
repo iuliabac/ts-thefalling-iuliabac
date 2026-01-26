@@ -36,8 +36,10 @@ export default class TheFalling extends Game {
     this.timeToNextItem = (Math.random() * 300) + 500;
 
     this.lightforce = 10;
-    this.timeToNextLightforceDrop = 1000;
+
     this.monstersCaught = 0;
+    
+    this.timeToNextLightforceDrop = 1000;
   }
 
   /**
