@@ -4,6 +4,7 @@ import LightItem from './LightItem.js';
 export default class Orb extends LightItem {
   public constructor(maxX: number, maxY: number) {
     super();
+
     const random: number = Math.random();
     if (random < 0.5) {
       this.image = CanvasRenderer.loadNewImage('assets/orb1.png');
@@ -18,6 +19,7 @@ export default class Orb extends LightItem {
 
     this.posX = Math.random() * maxX;
     this.posY = maxY;
+
     this.speed = 0.2;
   }
 }
