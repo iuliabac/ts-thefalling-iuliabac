@@ -14,15 +14,15 @@ export default class TheFalling extends Game {
 
   private player: Player;
 
-  private lightforce: number;
-
-  private timeToNextLightforceDrop: number;
-
-  private monstersCaught: number;
+  private timeToNextItem: number;
 
   private lightItems: LightItem[] = [];
 
-  private timeToNextItem: number;
+  private lightforce: number;
+
+  private monstersCaught: number;
+
+  private timeToNextLightforceDrop: number;
 
   public constructor(canvas: HTMLCanvasElement) {
     super();
@@ -36,8 +36,10 @@ export default class TheFalling extends Game {
     this.timeToNextItem = (Math.random() * 300) + 500;
 
     this.lightforce = 10;
-    this.timeToNextLightforceDrop = 1000;
+
     this.monstersCaught = 0;
+
+    this.timeToNextLightforceDrop = 1000;
   }
 
   /**
@@ -60,9 +62,9 @@ export default class TheFalling extends Game {
       const random: number = Math.random();
 
       if (random > 0.3) {
-        this.lightItems.push(new Orb(this.canvas.width));
+        this.lightItems.push(new Orb(this.canvas.width, this.canvas.height));
       } else {
-        this.lightItems.push(new Monster(this.canvas.width));
+        this.lightItems.push(new Monster(this.canvas.width, this.canvas.height));
       }
 
       this.timeToNextItem = (Math.random() * 300) + 300;

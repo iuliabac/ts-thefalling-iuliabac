@@ -4,6 +4,7 @@ import LightItem from './LightItem.js';
 export default class Monster extends LightItem {
   public constructor(maxX: number) {
     super();
+    
     const random:number = Math.random();
     if (random < 0.5) {
       this.image = CanvasRenderer.loadNewImage('./assets/monster1.png');
@@ -16,8 +17,9 @@ export default class Monster extends LightItem {
       this.lightForce = -3;
     }
 
-    this.speed = 0.2 + (Math.random() * 0.2);
     this.posX = Math.random() * maxX;
     this.posY = - 32;
+
+    this.speed = 0.2 + (Math.random() * 0.2);
   }
 }

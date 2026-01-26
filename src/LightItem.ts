@@ -7,6 +7,7 @@ export default abstract class LightItem extends CanvasItem {
 
   public constructor() {
     super();
+    
     this.lightForce = 0;
     this.speed = 1;
   }
