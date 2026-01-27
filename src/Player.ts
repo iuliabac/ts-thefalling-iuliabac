@@ -8,12 +8,13 @@ export default class Player extends CanvasItem {
 
   public constructor(maxX: number) {
     super();
-    this.image = CanvasRenderer.loadNewImage('./assets/player.png');
     this.posX = 50;
     this.posY = 100;
 
+    this.image = CanvasRenderer.loadNewImage('./assets/player.png');
+
     this.maxX = maxX;
-    
+
     this.direction = 0;
   }
 

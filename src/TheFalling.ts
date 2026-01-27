@@ -38,7 +38,7 @@ export default class TheFalling extends Game {
     this.lightforce = 10;
 
     this.monstersCaught = 0;
-    
+
     this.timeToNextLightforceDrop = 1000;
   }
 

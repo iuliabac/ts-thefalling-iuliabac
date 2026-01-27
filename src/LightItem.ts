@@ -16,10 +16,6 @@ export default abstract class LightItem extends CanvasItem {
     return this.lightForce;
   }
 
-  /**
-   * akshyfgdjkafgsdjkagsdjhagjkdgh
-   * @param delta aghsdhjagsdgasghjd
-   */
   public update(delta: number): void {
     this.posY -= this.speed * delta;
   }
