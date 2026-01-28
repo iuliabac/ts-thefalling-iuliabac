@@ -81,18 +81,18 @@ export default class TheFalling extends Game {
   public update(delta: number): boolean {
     this.player.update(delta); // updates the player
 
+    this.spawnNewItem(delta);
+
+    this.timeToNextLightforceDrop -= delta;
+
     for (const item of this.lightItems) {
       item.update(delta);
     }
-
-    this.timeToNextLightforceDrop -= delta;
 
     if (this.timeToNextLightforceDrop < 0) {
       this.lightforce -= 1;
       this.timeToNextLightforceDrop = 1000;
     }
-
-    this.spawnNewItem(delta);
 
     for (let i: number = this.lightItems.length - 1; i >= 0; i--) {
       const item: LightItem = this.lightItems[i];
